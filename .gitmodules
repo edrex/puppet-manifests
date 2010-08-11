@@ -4,3 +4,15 @@
 [submodule "modules/postgresql"]
 	path = modules/postgresql
 	url = http://github.com/camptocamp/puppet-postgresql.git
+[submodule "modules/postgis"]
+	path = modules/postgis
+	url = http://github.com/camptocamp/puppet-postgis.git
+[submodule "modules/common"]
+	path = modules/common
+	url = http://github.com/camptocamp/puppet-common.git
+[submodule "modules/sudo"]
+	path = modules/sudo
+	url = http://github.com/camptocamp/puppet-sudo.git
+[submodule "modules/python"]
+	path = modules/python
+	url = git://github.com/edrex/puppet-python.git
