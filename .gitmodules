@@ -1,3 +1,6 @@
 [submodule "modules/developer"]
 	path = modules/developer
 	url = git://github.com/edrex/puppet-developer.git
+[submodule "modules/postgresql"]
+	path = modules/postgresql
+	url = http://github.com/camptocamp/puppet-postgresql.git
