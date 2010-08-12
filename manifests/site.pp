@@ -1,7 +1,7 @@
 import "users"
 import "nodes"
 
-Exec { path => "/usr/bin:/usr/sbin/:/bin:/sbin" }
+Exec { path => "/usr/local/bin:/usr/bin:/usr/sbin/:/bin:/sbin" }
 
 Package {
     provider => $operatingsystem ? {

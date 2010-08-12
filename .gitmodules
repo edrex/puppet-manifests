@@ -16,3 +16,9 @@
 [submodule "modules/python"]
 	path = modules/python
 	url = git://github.com/edrex/puppet-python.git
+[submodule "modules/nginx"]
+	path = modules/nginx
+	url = http://github.com/camptocamp/puppet-nginx.git
+[submodule "modules/upstart"]
+	path = modules/upstart
+	url = git@github.com:edrex/puppet-upstart.git
