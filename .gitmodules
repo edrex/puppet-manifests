@@ -12,13 +12,13 @@
 	url = http://github.com/camptocamp/puppet-common.git
 [submodule "modules/sudo"]
 	path = modules/sudo
-	url = http://github.com/camptocamp/puppet-sudo.git
+	url = git@github.com:edrex/puppet-sudo.git
 [submodule "modules/python"]
 	path = modules/python
-	url = git://github.com/edrex/puppet-python.git
+	url = git@github.com:edrex/puppet-python.git 
 [submodule "modules/nginx"]
 	path = modules/nginx
-	url = http://github.com/camptocamp/puppet-nginx.git
+	url = git@github.com:edrex/puppet-nginx.git
 [submodule "modules/upstart"]
 	path = modules/upstart
 	url = git@github.com:edrex/puppet-upstart.git
