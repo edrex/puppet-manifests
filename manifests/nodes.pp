@@ -29,6 +29,15 @@ node 'sqrly' inherits default {
     # install gunicorn
         exec { "sudo -u deploy pip -E /srv/sqrly/env install gunicorn": }
 
+     package { ["python-imaging", "python-lxml"]:
+        ensure => present,
+    }
+    file { "/srv/sqrly/logs/sqrly.log" : 
+	ensure => present,
+	owner => 'sqrly',
+	group => 'sqrly',
+	mode => 664,
+	}
     gunicorn::job { sqrly_gunicorn :
 	description => "Run Gunicorn for Sqrly",
 	user => "sqrly",
