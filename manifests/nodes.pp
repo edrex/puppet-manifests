@@ -18,7 +18,7 @@ node 'sqrly' inherits default {
 	server_name => 'sqrly.com',
 	doc_root => '/srv/sqrly',
 	app_root => '/srv/sqrly',
-	proxy_root => '/srv/sqrly/sock/django.sock',
+	proxy_root => 'unix:/srv/sqrly/sock/django.sock',
 	port => '80',
 	enable_cgi => true
 	}
