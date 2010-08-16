@@ -56,7 +56,9 @@ define django::app{
     common::concatfilepart { "sudoers.django.app.$name":
         ensure => present,
         file => "/etc/sudoers",
-        content => "deploy        ALL = ($name) NOPASSWD: ALL",
+        content => "deploy        ALL = ($name) NOPASSWD: ALL
+deploy        ALL = NOPASSWD: /sbin/restart
+deploy        ALL = NOPASSWD: /etc/init.d/nginx",
     }
     # todo: install gunicorn
 
