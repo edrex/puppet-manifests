@@ -1,3 +1,3 @@
-#import "classes/*.pp"
+import "classes/*.pp"
 import "defines/*.pp"
 
