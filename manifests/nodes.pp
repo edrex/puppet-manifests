@@ -4,8 +4,8 @@ node 'default' {
 }
 
 node 'sqrly' inherits default {
+    include django::postgresql
     include postgresql
-    include postgresql::administration
     include postgis
     include python
     include python::egg_virtualenv
@@ -13,11 +13,25 @@ node 'sqrly' inherits default {
     # make django::postgres, postgis classes, defines
     django::app{ "sqrly": }
      
-    # include nginx
-    # include user::sqrly
-
+    include nginx
+    nginx::site{ sqrly_com :
+	server_name => 'sqrly.com',
+	doc_root => '/srv/sqrly',
+	app_root => '/srv/sqrly',
+	proxy_root => '/srv/sqrly/sock/django.sock',
+	port => '80',
+	enable_cgi => true
+	}
     # postgres stuff
-    # TODO: maybe create users for devs
+
+    # gunicorn stuff
+    include upstart
+    gunicorn::job { sqrly_gunicorn :
+	description => "Run Gunicorn for Sqrly",
+	user => "sqrly",
+	virtualenv => "/srv/sqrly/env",
+	app_root => "/srv/sqrly/app/",
+    }
 
     postgis::database{ "sqrly":
         owner   => sqrly
