@@ -26,6 +26,9 @@ node 'sqrly' inherits default {
 
     # gunicorn stuff
     include upstart
+    # install gunicorn
+        exec { "sudo -u deploy pip -E /srv/sqrly/env install gunicorn": }
+
     gunicorn::job { sqrly_gunicorn :
 	description => "Run Gunicorn for Sqrly",
 	user => "sqrly",
